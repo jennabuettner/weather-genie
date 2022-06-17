@@ -35,6 +35,7 @@ function getWeatherData(latitude, longitude) {
 
 function renderForecastCards(days) {
   days.forEach((day) => {
+    console.log(day.temp);
     $(".five-day-forecast-container").append(
       $("<div>", { class: "card" })
         .append(
@@ -46,6 +47,12 @@ function renderForecastCards(days) {
         )
         .append("<div>", { class: "card-body" })
         .append($("<h5>", { class: "card-title" }).text(formatDateTime(day.dt)))
+        .append("<div>", { class: "card-text" })
+        .append(
+          $("<ul>", { class: "list-group list-group-flush" }).append(
+            $("<li>", { class: "list-group-item" }).html(day.temp.day)
+          )
+        )
     );
   });
 
