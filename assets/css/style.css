@@ -11,6 +11,11 @@
     flex-wrap: wrap;
 }
 
+.icon-img {
+    width: 100px;
+    height: 100px;
+}
+
 .input-group-text {
     color: white;
     background-color: rgb(84, 114, 215);

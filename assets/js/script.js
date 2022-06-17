@@ -1,6 +1,10 @@
 const citySearch = $("#citySearch");
 var unixFormat = moment.unix("1318781876").format("MM/DD/YYYY hh:mm:ss");
 
+function formatDateTime(date) {
+  return moment.unix(date).format("MM/DD");
+}
+
 function weatherRender(dataObject) {
   let userInput = $("#citySearchInput").val();
 
@@ -32,10 +36,16 @@ function getWeatherData(latitude, longitude) {
 function renderForecastCards(days) {
   days.forEach((day) => {
     $(".five-day-forecast-container").append(
-      $("<div>", { class: "card" }).append("<img>", {
-        src: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
-        alt: "icon",
-      })
+      $("<div>", { class: "card" })
+        .append(
+          $("<img>", {
+            src: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
+            alt: "icon",
+            class: "card-img-top",
+          })
+        )
+        .append("<div>", { class: "card-body" })
+        .append($("<h5>", { class: "card-title" }).text(formatDateTime(day.dt)))
     );
   });
 
