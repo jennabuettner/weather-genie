@@ -1,6 +1,5 @@
 const citySearch = $("#citySearch");
-let cardsContainer = $(".five-day-forecast-container");
-let dayCard = $(".card");
+var unixFormat = moment.unix("1318781876").format("MM/DD/YYYY hh:mm:ss");
 
 function weatherRender(dataObject) {
   let userInput = $("#citySearchInput").val();
@@ -39,10 +38,11 @@ function renderForecastCards(days) {
       })
     );
   });
+
+  // let temp = daily[i].temp;
+  // let humidity = daily[i].humidity;
+  // let windSpeed = daily[i].wind_speed;
+  // let uvIndex = daily[i].uvi;
 }
 
 citySearch.on("click", weatherRender);
-
-function displayResults() {
-  $(dayCard).append(data.daily[0].dt);
-}

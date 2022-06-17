@@ -8,4 +8,14 @@
 .five-day-forecast-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.input-group-text {
+    color: white;
+    background-color: rgb(84, 114, 215);
+}
+
+#forecastSection {
+    display: inline-block;
 }
