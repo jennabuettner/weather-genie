@@ -50,16 +50,42 @@ function renderForecastCards(days) {
         .append("<div>", { class: "card-text" })
         .append(
           $("<ul>", { class: "list-group list-group-flush" }).append(
-            $("<li>", { class: "list-group-item" }).html(day.temp.day)
+            $("<li>", { class: "list-group-item" }).html(
+              `Temp: ${day.temp.day}°`
+            )
           )
         )
+        .append(
+          $("<li>", { class: "list-group-item" }).html(
+            `Humidity: ${day.humidity}%`
+          )
+        )
+        .append(
+          $("<li>", { class: "list-group-item" }).html(
+            `Wind Speed: ${day.wind_speed}`
+          )
+        )
+        .append($("<li>", { class: "list-group-item" }).html(`UVI: ${day.uvi}`))
     );
-  });
 
-  // let temp = daily[i].temp;
-  // let humidity = daily[i].humidity;
-  // let windSpeed = daily[i].wind_speed;
-  // let uvIndex = daily[i].uvi;
+    // function checkUVI() {
+    //   let uvIndex = ;
+    //   console.log(cuvIndex)
+
+    //       if (uvIndex < ) {
+    //           return 'favorable'
+    //       } else if (uvIndex > ) {
+    //           return 'moderate'
+    //       } else {
+    //           return 'severe'
+    //       }
+    //   }
+  });
 }
+
+// let temp = daily[i].temp;
+// let humidity = daily[i].humidity;
+// let windSpeed = daily[i].wind_speed;
+// let uvIndex = daily[i].uvi;
 
 citySearch.on("click", weatherRender);
