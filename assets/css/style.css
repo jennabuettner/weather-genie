@@ -21,6 +21,21 @@
     background-color: rgb(84, 114, 215);
 }
 
+.favorable {
+    color: white;
+    background-color: green;
+}
+
+.favorable {
+    color: white;
+    background-color: rgb(197, 197, 60);
+}
+
+.favorable {
+    color: white;
+    background-color: rgb(160, 0, 0);
+}
+
 #forecastSection {
     display: inline-block;
 }

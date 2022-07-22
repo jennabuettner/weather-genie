@@ -8,7 +8,7 @@ function formatDateTime(date) {
 function weatherRender(dataObject) {
   let userInput = $("#citySearchInput").val();
 
-  let url = `http://api.openweathermap.org/geo/1.0/direct?q=${userInput},3166&limit=1&appid=672266a91a312a90b7a1ac1d050f39ca`;
+  let url = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput},3166&limit=1&appid=672266a91a312a90b7a1ac1d050f39ca`;
 
   fetch(url)
     .then((response) => response.json())
@@ -35,12 +35,11 @@ function getWeatherData(latitude, longitude) {
 
 function renderForecastCards(days) {
   days.forEach((day) => {
-    console.log(day.temp);
     $(".five-day-forecast-container").append(
       $("<div>", { class: "card" })
         .append(
           $("<img>", {
-            src: `http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
+            src: `https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`,
             alt: "icon",
             class: "card-img-top",
           })
@@ -68,18 +67,19 @@ function renderForecastCards(days) {
         .append($("<li>", { class: "list-group-item" }).html(`UVI: ${day.uvi}`))
     );
 
-    // function checkUVI() {
-    //   let uvIndex = ;
-    //   console.log(cuvIndex)
+    //     function checkUVI(value) {
+    //       let uvIndex = day.uvi;
+    //       console.log(uvIndex);
 
-    //       if (uvIndex < ) {
-    //           return 'favorable'
-    //       } else if (uvIndex > ) {
-    //           return 'moderate'
+    //       if (value <= 3) {
+    //         return "favorable";
+    //       } else if (value <= 5) {
+    //         return "moderate";
     //       } else {
-    //           return 'severe'
+    //         return "severe";
     //       }
-    //   }
+    //     }
+    //     checkUVI();
   });
 }
 
